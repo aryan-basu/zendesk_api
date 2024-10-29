@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 
 const app = express();
 const port = 5000;
@@ -7,7 +8,15 @@ data = [
         "email": "aryan.basu@ptw.com",
     }
 ];
-app.get('/', (req, res) => {
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    next();
+  });
+  
+
+  app.get('/', (req, res) => {
     res.status(200).send('Welcome to my server!');
 });
 app.get('/data', (req, res) => {
