@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
 });
 app.get('/data', (req, res) => {
    res.status(200).json(({
-        data:data
+       data:encrptedText
         }));
   });
 
