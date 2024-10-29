@@ -16,7 +16,7 @@ var key = "secretkey.cx.tool.dubs.gg";
 console.log("Key : "+ key);
 
 var encrptedText = CryptoJS.AES.encrypt(data, key);
-console.log("Encrpted Text : "+ encrptedText.toString());
+// console.log("Encrpted Text : "+ encrptedText.toString());
 
 app.use(cors())
 app.use(function(req, res, next) {
@@ -32,10 +32,10 @@ app.use(function(req, res, next) {
 });
 app.get('/data', (req, res) => {
    res.status(200).json(({
-       data:encrptedText
+       data:encrptedText.toString()
         }));
   });
-
+//   JSON.stringify(JSON.stringify(userPropertiesAsJsonString))
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
