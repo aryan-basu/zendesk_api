@@ -11,7 +11,11 @@ app.get('/', (req, res) => {
   res.send('Welcome to my server!');
 });
 app.get('/data', (req, res) => {
-    res.json(data);
+   res.json(({
+        data: {
+            email: 'aryan.basu@ptw.com'
+        }
+        }));
   });
 
 app.listen(port, () => {
