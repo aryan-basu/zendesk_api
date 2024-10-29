@@ -8,10 +8,10 @@ data = [
     }
 ];
 app.get('/', (req, res) => {
-  res.send('Welcome to my server!');
+    res.status(200).send('Welcome to my server!');
 });
 app.get('/data', (req, res) => {
-   res.json(({
+   res.status(200).json(({
         data: {
             email: 'aryan.basu@ptw.com'
         }
