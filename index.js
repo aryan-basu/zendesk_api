@@ -62,6 +62,9 @@ app.get("/", (req, res) => {
 
 
 app.get('/data', (req, res) => {
+  console.log('email is',data)
+  encrptedText = CryptoJS.AES.encrypt(data, key);
+  console.log('encrypt is',encrptedText)
    res.status(200).json(({
        data:encrptedText.toString()
         }));
